@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<title>до ЦТ</title>
+</head>
+
+<body bgcolor ="#000000">
+	<style>
+		.timer {
+		color:#ffffff;
+		font:400% Courier;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		}
+		body, html{
+		    height: 100%;
+		}
+		* {
+		    margin: 0;
+		    padding: 0;
+		}
+	</style>
+	<p id ="timer" class ="timer"><p/>
+	<script>
+		var countDownDate = new Date("June 12, 2018 11:00:00").getTime();
+		var countdownfunction = setInterval(function() {
+		var now = new Date().getTime();
+		var distance = countDownDate - now;
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		document.getElementById("timer").innerHTML = "До ЦТ осталось: " + days + ":" + hours + ":" + minutes + ":" + seconds;
+		if (distance < 0) {
+			clearInterval(countdownfunction);
+			document.getElementById("timer").innerHTML = "ты обречен";
+		}
+		}, 1000);
+	</script>
+</body>
+</html>
