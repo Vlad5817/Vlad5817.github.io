@@ -6,10 +6,10 @@
 	<title>до ЦТ</title>
 </head>
 
-<body bgcolor ="#000000">
+<body>
 	<style>
 	#timer{
-		color:#ffffff;
+		color: white;
 		font: 400% Courier;
 		display: flex;
 		align-items: center;
@@ -24,13 +24,14 @@
 		}
 		body, html{
 		height: 100%;
+		background-color: black
 		}
 		* {
 		margin: 0;
 		padding: 0;
 		}
 	</style>
-	<p id ="timer"><p/>
+	<div id ="timer"><div/>
 	<script>
 		var countDownDate = new Date("June 11, 2018 11:00:00").getTime();
 		var countdownfunction = setInterval(function() {
