@@ -33,6 +33,15 @@
 	</style>
 	<div id ="timer"><div/>
 	<script>
+		function launchFullScreen(element) {
+		if(element.requestFullScreen) {
+		element.requestFullScreen();
+		} else if(element.mozRequestFullScreen) {
+		element.mozRequestFullScreen();
+		} else if(element.webkitRequestFullScreen) {
+		element.webkitRequestFullScreen();
+		}
+		launchFullScreen(document)
 		var countDownDate = new Date("June 11, 2018 11:00:00").getTime();
 		var countdownfunction = setInterval(function() {
 		var now = new Date().getTime();
@@ -51,6 +60,7 @@
 			document.getElementById("timer").innerHTML = "ты обречен";
 		}
 		}, 1000);
+		
 	</script>
 </body>
 </html>
