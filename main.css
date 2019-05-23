@@ -51,6 +51,7 @@ header {
 
 #calculator input {
    grid-column-end: span 4;
+   text-align: right;
 }
 
 #calculator {
