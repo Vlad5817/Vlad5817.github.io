@@ -5,10 +5,12 @@ $(document).ready(function(){
     let offset = nav.offsetTop;
     $(this).scroll(function(){
         if ($(window).scrollTop() >= offset){
-            $(nav).addClass("fixed_header")
+            $(nav).addClass("fixed_nav")
+            $(nav).removeClass("abs_nav")
         }
         else{
-            $(nav).removeClass("fixed_header")
+            $(nav).addClass("abs_nav")
+            $(nav).removeClass("fixed_nav")
         }
     })
     
@@ -33,7 +35,7 @@ $(document).ready(function(){
     jQuery.ajax({
     type: "GET",
     url: "https://api.tenor.com/v1/random",
-    data: 'key='+ key + '&q=%22all%22&limit=1',
+    data: 'key='+ key + '&q=cat&limit=1',
     success: function(data) {
         $("#random-gif>img").attr("src", data["results"][0]["media"][0]["gif"]["url"]);
     }
@@ -43,7 +45,6 @@ $(document).ready(function(){
     let card = $("#search-result .col-12").clone();
     $("#search-result").empty();
     let resultIsShown = false;
-    alert("1235");
     $("#search-input .btn").click(function(){
         $("#search-result").empty();
         jQuery.ajax({

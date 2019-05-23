@@ -1,14 +1,19 @@
-.fixed_header {
+.fixed_nav {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%; 
     z-index: 1000;
 }
 
 header {
-    height: 75vh;
+    position: relative;
     z-index: 10;
+}
+
+.abs_nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
 }
 
 .banner {
@@ -18,7 +23,15 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 85%
+    height: 75vh
+}
+
+.banner>h1 {
+    text-align: center;
+    padding-top: 30vh;
+    z-index: 11;
+    color: aliceblue;
+
 }
 
 @media (min-width: 1200px) {
@@ -42,7 +55,5 @@ header {
 
 #calculator {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1r;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-
-
