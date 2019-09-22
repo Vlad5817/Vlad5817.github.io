@@ -32,29 +32,27 @@
 		}
 	</style>
 	<div id ="timer"><div/>
-	<script>
-		function launchFullScreen(element) {
-		if(element.requestFullScreen) {
-		element.requestFullScreen();
-		} else if(element.mozRequestFullScreen) {
-		element.mozRequestFullScreen();
-		} else if(element.webkitRequestFullScreen) {
-		element.webkitRequestFullScreen();
-		}
-		}
-		launchFullScreen(document)
-		var countDownDate = new Date("June 12, 2019 11:00:00").getTime();
+	<script type="text/javascript">
+		var countDownDate = new Date("June 12, 2020 11:00:00").getTime();
 		var countdownfunction = setInterval(function() {
 		var now = new Date().getTime();
 		var distance = countDownDate - now;
 		var days = Math.floor(distance / (1000 * 60 * 60 * 24)) + '';
-		for (i=2; i>days.length; i--){days = '0' + days};
+		for (i=2; i>days.length; i--){
+			days = '0' + days
+		};
 		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + '';
-		for (i=2; i>hours.length; i--){hours = '0' + hours};
+		for (i=2; i>hours.length; i--){
+			hours = '0' + hours
+		};
 		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) + '';
-		for (i=2; i>minutes.length; i--){minutes = '0' + minutes};
+		for (i=2; i>minutes.length; i--){
+			minutes = '0' + minutes
+		};
 		var seconds = Math.floor((distance % (1000 * 60)) / 1000) + '';
-		for (i=2; i>seconds.length; i--){seconds = '0' + seconds};
+		for (i=2; i>seconds.length; i--){
+			seconds = '0' + seconds
+		};
 		document.getElementById("timer").innerHTML = "До ЦТ осталось: " + days + ":" + hours + ":" + minutes + ":" + seconds;
 		if (distance < 0) {
 			clearInterval(countdownfunction);
